@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tab Group Bookmarks</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tab Group Bookmarks</h1>
+
+    <!-- Status section -->
+    <div id="status" class="section">
+      <div id="synced-status" class="hidden">
+        <p class="status-text">
+          <span class="status-icon">✓</span>
+          <strong>Synced with:</strong>
+          <span id="folder-name"></span>
+        </p>
+        <button id="unsync-btn" class="btn btn-secondary">Unsync Window</button>
+      </div>
+
+      <div id="unsynced-status" class="hidden">
+        <p class="status-text">
+          <span class="status-icon">⚠</span>
+          This window is not synced with any bookmark folder
+        </p>
+      </div>
+    </div>
+
+    <!-- Open folder section -->
+    <div id="open-folder-section" class="section">
+      <h2>Open Folder as New Window</h2>
+      <div class="action-group">
+        <div class="input-group">
+          <select id="open-folder-select" class="folder-select">
+            <option value="">Select a bookmark folder...</option>
+          </select>
+          <button id="open-folder-btn" class="btn btn-primary" disabled>Open</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions section -->
+    <div id="actions" class="section">
+      <h2>Sync This Window</h2>
+
+      <!-- Create new folder -->
+      <div class="action-group">
+        <h3>Create New Folder</h3>
+        <div class="input-group">
+          <input type="text" id="new-folder-name" placeholder="Folder name" />
+          <button id="create-folder-btn" class="btn btn-primary">Create & Sync</button>
+        </div>
+      </div>
+
+      <!-- Select existing folder -->
+      <div class="action-group">
+        <h3>Use Existing Folder</h3>
+        <div class="input-group">
+          <select id="folder-select" class="folder-select">
+            <option value="">Select a bookmark folder...</option>
+          </select>
+          <button id="sync-folder-btn" class="btn btn-primary" disabled>Sync</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Help section -->
+    <div id="help" class="section help">
+      <p><small>
+        This extension keeps your window tabs in sync with a bookmark folder.
+        Changes to tabs or bookmarks are automatically synced.
+      </small></p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
